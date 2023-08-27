@@ -29,7 +29,9 @@ jobs:
         # pod install
 
       - name: Build & Test
-        run: xcodebuild -workspace kitcast.xcworkspace -scheme kitcast -destination 'platform=tvOS Simulator,name=Apple TV,OS=16.1' build test
+        run: xcodebuild -project GitActionPlayer.xcodeproj -scheme GitActionPlayer -destination 'platform=tvOS Simulator,name=Apple TV,OS=16.1' build test
+
+      #-workspace GitActionPlayer.xcworkspace
 
       # - name: Setup Xcode
       #   uses: maxim-lobanov/setup-xcode@v1
