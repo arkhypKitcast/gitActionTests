@@ -18,7 +18,7 @@ default_platform(:tvos)
 platform :tvos do
   
   before_all do
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
   
   desc "Runing tests"
@@ -40,11 +40,11 @@ platform :tvos do
     # gym(scheme: "kitcast")
   end
   
-  error do |lane, exception|
-    slack(
-        message: exception.to_s, 
-        success: false, 
-        payload: { "Output" => exception.error_info.to_s })
-  end
+  # error do |lane, exception|
+  #   slack(
+  #       message: exception.to_s, 
+  #       success: false, 
+  #       payload: { "Output" => exception.error_info.to_s })
+  # end
 
 end
