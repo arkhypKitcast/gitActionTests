@@ -29,7 +29,7 @@ jobs:
         # pod install
 
       - name: Build & Test
-        run: xcodebuild -project GitActionPlayer.xcodeproj -scheme GitActionPlayer -destination 'platform=tvOS Simulator,name=Apple TV,OS=16.1' build test
+        run: xcodebuild -project GitActionPlayer/GitActionPlayer.xcodeproj -scheme GitActionPlayer -destination 'platform=tvOS Simulator,name=Apple TV,OS=16.1' build test
 
       #-workspace GitActionPlayer.xcworkspace
 
