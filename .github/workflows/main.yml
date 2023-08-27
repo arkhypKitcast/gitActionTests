@@ -68,7 +68,9 @@ jobs:
       #   run: fastlane tests
 
       - name: Run Bundle Tests
-        run: bundle exec fastlane tests
+        run: |
+          cd GitActionPlayer
+          bundle exec fastlane tests
         
       - name: Run Slack Message
         env:
