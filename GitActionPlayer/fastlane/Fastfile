@@ -1,0 +1,50 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:tvos)
+
+platform :tvos do
+  
+  before_all do
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+  end
+  
+  desc "Runing tests"
+  lane :tests do
+
+    # match(type: 'appstore')
+    # build_app(
+    #   workspace: "kitcast.xcworkspace",
+    #   scheme: "kitcast")
+
+    scan(
+        # workspace: "GitActionPlayer.xcodeproj", #xcworkspace
+        project: "GitActionPlayer.xcodeproj",
+        scheme: "GitActionPlayer",
+        device: "Apple TV",
+        clean: true,
+        verbose: true)
+
+    # gym(scheme: "kitcast")
+  end
+  
+  error do |lane, exception|
+    slack(
+        message: exception.to_s, 
+        success: false, 
+        payload: { "Output" => exception.error_info.to_s })
+  end
+
+end
