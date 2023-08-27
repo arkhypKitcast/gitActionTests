@@ -18,8 +18,8 @@ jobs:
       # - name: Install dependencies
       #   run: bundle install
 
-      - name: Select Xcode Version
-        run: sudo xcode-select -switch /Applications/Xcode_14.2.app # replace with your desired Xcode version
+      # - name: Select Xcode Version
+      #   run: sudo xcode-select -switch /Applications/Xcode_14.2.app # replace with your desired Xcode version
 
       - name: Install Dependencies (e.g., CocoaPods)
         run: |
