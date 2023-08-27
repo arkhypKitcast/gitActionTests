@@ -34,8 +34,7 @@ platform :tvos do
         project: "GitActionPlayer.xcodeproj",
         scheme: "GitActionPlayer",
         device: "Apple TV",
-        clean: true,
-        verbose: true)
+        clean: true)
 
     # gym(scheme: "kitcast")
   end
