@@ -25,8 +25,8 @@ jobs:
         run: |
           gem install bundler
           bundle install
-          bundle exec pod install --repo-update
-          pod install
+        # bundle exec pod install --repo-update
+        # pod install
 
       - name: Build & Test
         run: xcodebuild -workspace kitcast.xcworkspace -scheme kitcast -destination 'platform=tvOS Simulator,name=Apple TV,OS=16.1' build test
